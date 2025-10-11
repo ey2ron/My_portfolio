@@ -47,6 +47,20 @@ img {
   height: auto;
 }
 
+.title-heading {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title-heading h2 {
+  font-size: 2rem;
+  margin: 0.5em 0 1rem 0;
+}
+
+.title-heading p {
+  font-family: "Poppins", sans-serif;
+  margin-bottom:5rem ;
+}
 /* header */
 
 header {
@@ -302,8 +316,9 @@ nav {
 /* About */
 
 .about {
+  padding-top: rem;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   max-width: 70rem;
   margin: auto;
 }
@@ -311,26 +326,47 @@ nav {
 .about .container {
   display: flex;
   align-items: center;
-  min-height: 80vh;
+  justify-content: space-between;
+  padding: 3rem 0;
+  gap: 3rem;
 }
 
-.about-img img {
-  height: 12rem;
-  width: auto;
-  border-radius: 50%;
+.card_container {
+  perspective: 50rem;
+  transform-style: preserve-3d;
+  align-items: center;
+  min-height: 20vh;
   margin: 2rem;
+}
+.card_container .card {
+  cursor: pointer;
+  border-radius: 0.125em;
+  width: 30vh;
+  transition: transform 300ms ease;
+}
+.card_container:hover .card {
+  transform: rotate3d(var(--x), var(--y), 3, 25deg);
+}
+
+.card img {
+  height: auto;
+  width: auto;
+  margin: auto;
   box-shadow: 0 20px 30px 0 rgba(0, 255, 255, 0.15);
+  border-radius: 10%;
 }
 
 .about-text-box {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;
+  margin: 1rem;
 }
 
 .about-text-box h2 {
   font-size: 4rem;
   margin-bottom: 20px;
+  color: #E87A64;
 }
 
 .about-text-box p {
@@ -341,7 +377,7 @@ nav {
 }
 
 hr {
-  margin: 4rem 0;
+  margin: 2rem 0;
   background: linear-gradient(
     to right,
     rgba(249, 105, 14, 1) 0%,
@@ -351,71 +387,11 @@ hr {
   height: 1px;
 }
 
-/* Services */
-
-.services {
-  padding: 3rem 0;
-  min-height: 100vh;
-  max-width: 90rem;
-  margin: auto;
-}
-
-.title-heading {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.title-heading h2 {
-  font-size: 2rem;
-  margin: 0.5rem 0 1rem 0;
-}
-
-.title-heading p {
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 5rem;
-}
-
-.service-tiers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 2.5rem;
-}
-
-.tier-item {
-  height: 30rem;
-  padding: 3rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: default;
-}
-
-.tier-item i {
-  font-size: 3.5rem;
-}
-
-.tier-item h2 {
-  font-size: 2rem;
-  margin: 2rem 0;
-  background: linear-gradient(
-    to right,
-    rgba(249, 105, 14, 1) 0%,
-    rgba(102, 51, 153, 1) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.tier-item p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.4rem;
-}
-
 /* Projects */
 
 .projects {
   padding: 3rem 0;
+  padding-bottom: 0rem;
   min-height: 100vh;
   max-width: 70rem;
   margin: auto;
@@ -432,8 +408,14 @@ hr {
   margin: 0 1.45rem 5rem 1.45rem;
 }
 
-.project-img {
+.project-img{
   flex: 1;
+}
+
+.project-img img {
+  box-shadow: 0 20px 30px 0 rgba(0, 255, 255, 0.15);
+  border-radius: 10%;
+  width: 70%;
 }
 
 .project-description {
@@ -463,6 +445,105 @@ hr {
   font-size: 1.4rem;
 }
 
+/* Certificate */
+
+.certification {
+  padding: 3rem 0;
+  min-height: 50vh;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.cards-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5rem;
+}
+
+.cert-card {
+    width: 250px;
+    height: 210px;
+    background: linear-gradient(
+    35deg,
+    rgb(153, 65, 10) 30%,
+    rgb(255, 255, 255) 100%
+  );
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.01;
+    align-items: center;
+    padding: 15px 20px 0;
+    border-radius: 30px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 20px 30px 0 rgba(0, 255, 255, 0.15);
+}
+
+.cert-card h3 {
+    font-size: 1.5rem;
+    color:#132541
+}
+
+.cert-card img {
+    width: 100%;
+    height: 130px;
+    border-radius: 16px;
+    transition: 0.5s ease-in-out;
+}
+
+.cert-card div {
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.cert-card h3 {
+    margin: 10px 0 20px;
+}
+
+:is(p, a) {
+    /* display: none; */
+    transition: all 0.5s ease-in-out;
+}
+
+.cert-card p {
+    margin-bottom: 10px;
+}
+
+.cert-card a {
+    text-decoration: none;
+    background-color: #2525E7;
+    color: white;
+    padding: 8px 10px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.cert-card:hover {
+    height: 340px;
+}
+
+.cert-card:hover img {
+    width: 80%;
+    transform: translateY(-40px);
+}
+
+.cert-card:hover p,
+.cert-card:hover a {
+    display: inline-block;
+}
+
+.cert-card a:hover {
+    border: 1px groove transparent;
+    box-shadow: 0 2px 12px gray;
+    opacity: 0.9;
+}
+
 /* Contact */
 
 .contact {
@@ -470,7 +551,7 @@ hr {
   min-height: 100vh;
   max-width: 70rem;
   margin: auto;
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 .contact h2 {
